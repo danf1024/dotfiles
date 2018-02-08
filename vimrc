@@ -51,7 +51,7 @@ autocmd FileType markdown let b:noStripWhitespace=1
 
 let g:rg_command = '
   \ rg --column --line-number --no-heading --fixed-strings --smart-case --hidden --follow --color "always"
-  \ -g "*.{R,rs,java,jbuilder,js,jsx,json,php,ctp,css,scss,md,styl,jade,html,config,py,cpp,c,go,hs,rb,erb,conf}"
+  \ -g "*.{sql,R,rs,java,jbuilder,js,jsx,json,php,ctp,css,scss,md,styl,jade,html,config,py,cpp,c,go,hs,rb,erb,conf}"
   \ -g "!{.git,node_modules,vendor}/*" '
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
