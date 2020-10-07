@@ -68,15 +68,15 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 let g:rg_command = '
-  \ rg --column --line-number --no-heading --fixed-strings --smart-case --hidden --follow --color "always"
+  \ rg --column --line-number --no-heading --fixed-strings --smart-case --hidden --color "always"
   \ -g "*.{ts,tsx,hbs,sql,R,rs,java,groovy,jbuilder,js,jsx,json,php,ctp,css,scss,md,styl,jade,html,config,py,cpp,c,go,hs,rb,erb,conf,xml,lock,jl,yml,yaml}" '
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 let ruby_no_expensive=1
 
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " OPTIONS
 set re=1
