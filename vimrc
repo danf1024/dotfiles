@@ -4,8 +4,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'w0rp/ale'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'dense-analysis/ale'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/fzf'
@@ -26,6 +26,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jason0x43/vim-js-indent'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on
@@ -59,7 +60,7 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.js,*.scss,*.jl,*.py set shiftwidth=4 | set softtabstop=4
 autocmd BufNewFile,BufRead *.md setlocal textwidth=80
 
-let g:ale_ruby_rubocop_executable = 'rubocop-daemon-wrapper'
+let g:ale_ruby_rubocop_executable = 'bundle'
 
 let g:ale_fixers = {
 \ 'ruby': ['rubocop'],
@@ -69,7 +70,7 @@ let g:ale_fix_on_save = 1
 
 let g:rg_command = '
   \ rg --column --line-number --no-heading --fixed-strings --smart-case --hidden --color "always"
-  \ -g "*.{ts,tsx,hbs,sql,R,rs,java,groovy,jbuilder,js,jsx,json,php,ctp,css,scss,md,styl,jade,html,config,py,cpp,c,go,hs,rb,erb,conf,xml,lock,jl,yml,yaml}" '
+  \ -g "*.{ignore,ts,tsx,hbs,sql,R,rs,java,groovy,jbuilder,js,jsx,json,php,ctp,css,scss,md,styl,jade,html,config,py,cpp,c,go,hs,rb,erb,conf,xml,lock,jl,yml,yaml}" '
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
